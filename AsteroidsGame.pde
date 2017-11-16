@@ -90,3 +90,38 @@ public void keyReleased(){
    
    if (key=='h'){hyperspace=false;}
 }
+public class Asteriods extends Floater
+{
+  private int speedrotation;
+  
+  public Asteriods(){
+    corners =4;
+    int[]xS= {8,-16,-8,16};
+    int[]yS= {8,8,-8,-8};
+    xCorners =xS;
+    yCorners =yS;
+    myColor = 255;
+    myCenterX = 150;
+    myCenterY = 150;
+    myPointDirection = 0;
+    speedrotation  = 1;
+  }
+    public void setX(int x) {myCenterX = x;}
+    public int getX(){return (int) myCenterX;}
+    public void setY(int y) {myCenterY = y;}
+    public int getY(){return (int) myCenterY;}
+    public void setDirectionX(double x) {myDirectionX = x;}
+    public double getDirectionX(){return myDirectionX;}
+    public void setDirectionY(double y) {myDirectionY = y;}
+    public double getDirectionY(){return myDirectionY;}
+    public void setPointDirection(int degrees)  {myPointDirection = degrees;}
+    public double getPointDirection(){return myPointDirection;}
+    
+    public void move ()   //move the floater in the current direction of travel
+     {      
+      //change the x and y coordinates by myDirectionX and myDirectionY       
+      myCenterX += 1;    
+      myCenterY += 2;
+      turn(speedrotation);
+    }   
+}
