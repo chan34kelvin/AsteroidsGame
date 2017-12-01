@@ -1,6 +1,6 @@
 Spaceship ship= new Spaceship();
 Stars[] stars = new Stars[100];
-Asteriods ast = new Asteriods();
+Asteriods [] ast= new Asteriods [20];
 boolean move, rotateRight, rotateLeft, hyperspace;
 
 boolean up = false;
@@ -11,14 +11,16 @@ boolean right = false;
 public void setup(){
  size(500, 500);
  for(int i=0;i<stars.length;i++){ stars[i] = new Stars(); }
+ for(int r=0;r<ast.length;r++){ ast[r] = new Asteriods(); }
 }
 public void draw()
 {
   background(0);
   for(int i=0;i<stars.length;i++) { stars[i].show(); }
-  ast.show();
+  for(int r=0;r<ast.length;r++){ 
+  ast[r].move();
+  ast[r].show();}
   ship.show();
-  ast.move();
   if(right){
    ship.myCenterX += 6;
   }
@@ -89,39 +91,4 @@ public void keyReleased(){
    if (key=='z'){rotateLeft = false;}
    
    if (key=='h'){hyperspace=false;}
-}
-public class Asteriods extends Floater
-{
-  private int speedrotation;
-  
-  public Asteriods(){
-    corners =4;
-    int[]xS= {8,-16,-8,16};
-    int[]yS= {8,8,-8,-8};
-    xCorners =xS;
-    yCorners =yS;
-    myColor = 255;
-    myCenterX = 150;
-    myCenterY = 150;
-    myPointDirection = 0;
-    speedrotation  = 1;
-  }
-    public void setX(int x) {myCenterX = x;}
-    public int getX(){return (int) myCenterX;}
-    public void setY(int y) {myCenterY = y;}
-    public int getY(){return (int) myCenterY;}
-    public void setDirectionX(double x) {myDirectionX = x;}
-    public double getDirectionX(){return myDirectionX;}
-    public void setDirectionY(double y) {myDirectionY = y;}
-    public double getDirectionY(){return myDirectionY;}
-    public void setPointDirection(int degrees)  {myPointDirection = degrees;}
-    public double getPointDirection(){return myPointDirection;}
-    
-    public void move ()   //move the floater in the current direction of travel
-     {      
-      //change the x and y coordinates by myDirectionX and myDirectionY       
-      myCenterX += 1;    
-      myCenterY += 2;
-      turn(speedrotation);
-    }   
 }
