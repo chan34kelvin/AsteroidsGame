@@ -1,6 +1,7 @@
 Spaceship ship= new Spaceship();
 Stars[] stars = new Stars[100];
-Asteroid [] ast= new Asteroid [20];
+//Asteroid [] ast= new Asteroid [20];
+ArrayList <Asteroid> ast = new ArrayList<Asteroid>();
 boolean move, rotateRight, rotateLeft, hyperspace;
 
 boolean up = false;
@@ -11,15 +12,15 @@ boolean right = false;
 public void setup(){
  size(500, 500);
  for(int i=0;i<stars.length;i++){ stars[i] = new Stars(); }
- for(int r=0;r<ast.length;r++){ ast[r] = new Asteroid(); }
+ for(int r=0;r<20;r++){ ast.add(new Asteroid()); }
 }
 public void draw()
 {
   background(0);
   for(int i=0;i<stars.length;i++) { stars[i].show(); }
-  for(int r=0;r<ast.length;r++){ 
-  ast[r].move();
-  ast[r].show();}
+  for(int r=0;r<ast.size();r++){ 
+  ast.get(r).move();
+  ast.get(r).show();}
   ship.show();
   if(right){
    ship.myCenterX += 6;
