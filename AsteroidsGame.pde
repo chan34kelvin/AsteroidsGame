@@ -1,6 +1,6 @@
 Spaceship ship= new Spaceship();
 Stars[] stars = new Stars[100];
-Asteriods [] ast= new Asteriods [20];
+Asteroid [] ast= new Asteroid [20];
 boolean move, rotateRight, rotateLeft, hyperspace;
 
 boolean up = false;
@@ -11,7 +11,7 @@ boolean right = false;
 public void setup(){
  size(500, 500);
  for(int i=0;i<stars.length;i++){ stars[i] = new Stars(); }
- for(int r=0;r<ast.length;r++){ ast[r] = new Asteriods(); }
+ for(int r=0;r<ast.length;r++){ ast[r] = new Asteroid(); }
 }
 public void draw()
 {
