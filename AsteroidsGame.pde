@@ -2,25 +2,27 @@ Spaceship ship= new Spaceship();
 Stars[] stars = new Stars[100];
 //Asteroid [] ast= new Asteroid [20];
 ArrayList <Asteroid> ast = new ArrayList<Asteroid>();
+ArrayList <Bullet> Bullets = new ArrayList<Bullet>();
 boolean move, rotateRight, rotateLeft, hyperspace;
 
 boolean up = false;
 boolean down = false;
 boolean left = false;
 boolean right = false;
-
+public void settings(){
+  size(500,500);
+}
 public void setup(){
- size(500, 500);
  for(int i=0;i<stars.length;i++){ stars[i] = new Stars(); }
  for(int r=0;r<20;r++){ ast.add(new Asteroid()); }
 }
 public void draw()
 {
   background(0);
-  for(int i=0;i<stars.length;i++) { stars[i].show(); }
-  for(int r=0;r<ast.size();r++){ 
-  ast.get(r).move();
-  ast.get(r).show();}
+  for(int i=0;i<stars.length;i++) 
+  { 
+    stars[i].show();
+  }
   ship.show();
   if(right){
    ship.myCenterX += 6;
@@ -51,6 +53,16 @@ public void draw()
   //  ship.move();
   //  ship.accelerate(0.05);
   //}
+   for(int r=0;r<ast.size();r++){ 
+    float ship1 = dist(ship.getX(),ship.getY(),ast.get(r).getX(),ast.get(r).getY());
+    if(ship1< 20){
+      ast.remove(r);
+  }
+  else
+  {
+    ast.get(r).move();
+    ast.get(r).show();
+  }
   if(rotateRight){ship.turn(6);}
   if(rotateLeft){ship.turn(-6);}
   if(hyperspace){
@@ -61,6 +73,7 @@ public void draw()
       fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
       ellipse(250,250,(float)(Math.random()*700),(float)(Math.random()*700));
     }
+  }
   }
 }
 public void keyPressed()
@@ -93,4 +106,3 @@ public void keyReleased(){
    
    if (key=='h'){hyperspace=false;}
 }
-
