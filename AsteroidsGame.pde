@@ -61,14 +61,8 @@ oo = (0.05);
   }
 //hyperspace
   if(hyperspace){
-    //fill(0);
-    //noStroke();
-    //rect(0,0,1000,1000);
-    //for(int i=0;i<200;i++){
-    //  fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
-    //  ellipse(250,250,(float)(Math.random()*700),(float)(Math.random()*700));
     }
-  }
+}
 //rotation
   if(rotateRight){ship.turn(6);}
   if(rotateLeft){ship.turn(-6);}
