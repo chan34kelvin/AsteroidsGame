@@ -20,47 +20,8 @@ public void draw()
 {
   background(0);
     //bullets
-//  if (bullet1){
-//  Bullets.add(new Bullet(ship));
-//  }
-//  for(int p=0;p<Bullets.size();p++){
-//   Bullets.get(p).move();
-//   Bullets.get(p).show();
-//   Bullets.get(p).myCenterX += Bullets.get(p).myDirectionX;    
-//   Bullets.get(p).myCenterY += Bullets.get(p).myDirectionY;  
-//   if(Bullets.get(p).myCenterX==Bullets.get(p).myDirectionX&&Bullets.get(p).myCenterY==Bullets.get(p).myDirectionY){
-//   Bullets.remove(p);
-// }
-//for(int o=0;o<ast.size();o++){  
-//  if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullets.get(p).getX(),Bullets.get(p).getY())<20){
-//  Bullets.remove(p);
-//  ast.remove(o);
-//break;
-// }
-//}
-//}
-
-  //bullets
-//  if (bullet1)Bullets.add(new Bullet(ship));
-//for(int p=0;p<Bullets.size();p++){
-//   Bullets.get(p).move();
-//   Bullets.get(p).show();
-//   Bullets.get(p).myCenterX += Bullets.get(p).myDirectionX;    
-//   Bullets.get(p).myCenterY += Bullets.get(p).myDirectionY;  
-//   if(Bullets.get(p).myCenterX==Bullets.get(p).myDirectionX&&Bullets.get(p).myCenterY==Bullets.get(p).myDirectionY){
-//   Bullets.remove(p);
-//}
-//for(int o=0;o<ast.size();o++){  
-//  if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullets.get(p).getX(),Bullets.get(p).getY())<20){
-//  Bullets.remove(p);
-//  ast.remove(o);
-//break;
-//  }
-//}
-//}
-  if (bullet1){
+  if (bullet1)
   bullet2.add(new Bullet(ship));
-  }
   for(int p=0;p<bullet2.size();p++){
    bullet2.get(p).move();
    bullet2.get(p).show();
@@ -77,10 +38,11 @@ break;
  }
 }
 }
-if(ship.getDirectionX()>8){ship.setDirectionX(8);}
-  if(ship.getDirectionY()>8){ship.setDirectionY(8);}
-  if(ship.getDirectionX()<-8){ship.setDirectionX(-8);}
-  if(ship.getDirectionY()<-8){ship.setDirectionY(-8);}
+oo = (0.05);
+if(ship.getDirectionX()>6){ship.setDirectionX(6);}
+  if(ship.getDirectionY()>6){ship.setDirectionY(6);}
+  if(ship.getDirectionX()<-6){ship.setDirectionX(-6);}
+  if(ship.getDirectionY()<-6){ship.setDirectionY(-6);}
 //acclerate
 
   if(restart){
@@ -110,7 +72,6 @@ if(ship.getDirectionX()>8){ship.setDirectionX(8);}
     stars[i].show();
   }
 ship.show();
-oo = (0.05);
   if(move){ ship.move();ship.accelerate(oo+ss);}
   if(move==false){ ship.move();}
 //ship control
