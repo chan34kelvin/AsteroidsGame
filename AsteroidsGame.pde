@@ -49,7 +49,7 @@ oo = (0.05);
   if(ship.getDirectionY()<-8){ship.setDirectionY(-8);}
 
   //detection
-   for(int r=0;r<ast.size();r++){ 
+   for(int r=0;r<ast.size();r++) {
     float ship1 = dist(ship.getX(),ship.getY(),ast.get(r).getX(),ast.get(r).getY());
     if(ship1< 20){
       ast.remove(r);
@@ -69,6 +69,7 @@ oo = (0.05);
 //rotation
   if(rotateRight){ship.turn(6);}
   if(rotateLeft){ship.turn(-6);}
+   
 //stars
   for(int i=0;i<stars.length;i++) 
   { 
@@ -76,31 +77,31 @@ oo = (0.05);
   }
 //ship control
   ship.show();
-  if(right){
-   ship.myCenterX += 6;
-  }
-  if(left){
-   ship.myCenterX -= 6;
-  }
-  if(up){
-   ship.myCenterY -= 6;
-  }
-  if(down){
-   ship.myCenterY += 6;
-  }
-  if(ship.myCenterX<=9){
-    ship.myCenterX=489;
-  }
-  if(ship.myCenterX>=490){
-    ship.myCenterX=9;
-  }
-   if(ship.myCenterY<=9){
-    ship.myCenterY=489;
-  }
-  if(ship.myCenterY>=490){
-    ship.myCenterY=9;
-  }
-
+  //if(right){
+  // ship.myCenterX += 6;
+  //}
+  //if(left){
+  // ship.myCenterX -= 6;
+  //}
+  //if(up){
+  // ship.myCenterY -= 6;
+  //}
+  //if(down){
+  // ship.myCenterY += 6;
+  //}
+  //if(ship.myCenterX<=9){
+  //  ship.myCenterX=489;
+  //}
+  //if(ship.myCenterX>=490){
+  //  ship.myCenterX=9;
+  //}
+  // if(ship.myCenterY<=9){
+  //  ship.myCenterY=489;
+  //}
+  //if(ship.myCenterY>=490){
+  //  ship.myCenterY=9;
+  //}
+   
    }
 
 //}
