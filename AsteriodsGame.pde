@@ -10,13 +10,26 @@ boolean down = false;
 boolean left = false;
 boolean right = false;
 
-public void setting(){
-size(500,500);
-}
 public void setup(){
+ size(500,500);
  //stars
  for(int i=0;i<stars.length;i++){ stars[i] = new Stars(); }
- for(int r=0;r<20;r++){ ast.add(new Asteroid()); }
+ for(int r=0;r<20;r++){ ast.add(new Asteroid()Spaceship ship= new Spaceship();
+Stars[] stars = new Stars[100];
+//Asteroid [] ast= new Asteroid [20];
+ArrayList <Asteroid> ast = new ArrayList<Asteroid>();
+ArrayList <Bullet> Bullets = new ArrayList<Bullet>();
+boolean move, rotateRight, rotateLeft, hyperspace, bullet1, restart;
+float oo,ss;
+boolean up = false;
+boolean down = false;
+boolean left = false;
+boolean right = false;
+
+public void setup(){
+ size(500,500);
+ //stars
+ for(int i=0;i<stars.length;i++){ stars[i] = ); }
 }
 public void draw()
 {
