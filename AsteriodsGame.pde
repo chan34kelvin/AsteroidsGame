@@ -10,8 +10,9 @@ boolean down = false;
 boolean left = false;
 boolean right = false;
 
-public void setting();
+public void setting(){
 size(500,500);
+}
 public void setup(){
  //stars
  for(int i=0;i<stars.length;i++){ stars[i] = new Stars(); }
