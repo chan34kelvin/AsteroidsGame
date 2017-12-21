@@ -123,19 +123,19 @@ oo = (0.05);
    
 //bullets
     if (bullet1){
-  Bullet2.add(new Bullet(ship));
+  bullet2.add(new Bullet(ship));
   }
-  for(int p=0;p<Bullet2.size();p++){
-   Bullet2.get(p).move();
-   Bullet2.get(p).show();
-   Bullet2.get(p).myCenterX += Bullet2.get(p).myDirectionX;    
-   Bullet2.get(p).myCenterY += Bullet2.get(p).myDirectionY;  
-   if(Bullet2.get(p).myCenterX==Bullet2.get(p).myDirectionX&&Bullet2.get(p).myCenterY==Bullet2.get(p).myDirectionY){
-   Bullet2.remove(p);
+  for(int p=0;p<bullet2.size();p++){
+   bullet2.get(p).move();
+   bullet2.get(p).show();
+   bullet2.get(p).myCenterX += bullet2.get(p).myDirectionX;    
+   bullet2.get(p).myCenterY += bullet2.get(p).myDirectionY;  
+   if(bullet2.get(p).myCenterX==bullet2.get(p).myDirectionX&&bullet2.get(p).myCenterY==bullet2.get(p).myDirectionY){
+   bullet2.remove(p);
  }
 for(int o=0;o<ast.size();o++){  
-  if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullet2.get(p).getX(),Bullet2.get(p).getY())<20){
-  Bullet2.remove(p);
+  if (dist(ast.get(o).getX(), ast.get(o).getY(), bullet2.get(p).getX(),bullet2.get(p).getY())<20){
+  bullet2.remove(p);
   ast.remove(o);
 break;
  }
