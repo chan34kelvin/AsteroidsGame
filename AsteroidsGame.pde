@@ -108,10 +108,10 @@ oo = (0.05);
 public void keyPressed()
 {
    if (key=='o'){bullet1=true;}  
-   if (key=='w') {up = true; }
-   if (key=='d'){right = true;}
-   if (key=='a'){left = true;}
-   if (key=='s'){down = true;}
+   //if (key=='w') {up = true; }
+   //if (key=='d'){right = true;}
+   //if (key=='a'){left = true;}
+   //if (key=='s'){down = true;}
    if (key=='e'){move=true;}
    if (key=='f'){rotateRight = true;}
    if (key=='z'){rotateLeft = true;}
@@ -147,10 +147,10 @@ public void keyPressed()
 
 public void keyReleased(){
    if (key=='o'){bullet1=false;}
-   if (key=='d'){right=false;}
-   if (key=='a'){left=false;}
-   if (key=='w'){up=false;}
-   if (key=='s'){down=false;}
+   //if (key=='d'){right=false;}
+   //if (key=='a'){left=false;}
+   //if (key=='w'){up=false;}
+   //if (key=='s'){down=false;}
    if (key=='e'){move=false;}
    if (key=='f'){rotateRight = false;}
    if (key=='z'){rotateLeft = false;}
