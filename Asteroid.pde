@@ -1,6 +1,6 @@
 public class Asteroid extends Floater
 {
-  private int speedrotation;
+  //private int speedrotation;
   
   public Asteroid(){
     fill(255,255,0);
