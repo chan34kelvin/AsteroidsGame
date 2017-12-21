@@ -19,45 +19,7 @@ public void setup(){
 public void draw()
 {
   background(0);
-ship.show();
-//acclerate
-oo = (0.05);
-  if(move){ ship.move();ship.accelerate(oo+ss);}
-  if(move==false){ ship.move();}
-
-  if(ship.getDirectionX()>8){ship.setDirectionX(8);}
-  if(ship.getDirectionY()>8){ship.setDirectionY(8);}
-  if(ship.getDirectionX()<-8){ship.setDirectionX(-8);}
-  if(ship.getDirectionY()<-8){ship.setDirectionY(-8);}
-
-  //detection
-   for(int r=0;r<ast.size();r++) {
-    float ship1 = dist(ship.getX(),ship.getY(),ast.get(r).getX(),ast.get(r).getY());
-    if(ship1< 20){
-      ast.remove(r);
-  }
-  else
-  { 
-    ast.get(r).move();
-    ast.get(r).show();
-  }
-   }
-  if(restart){
-  }
-//hyperspace
-  if(hyperspace){
-    }
-   
-//rotation
-  if(rotateRight){ship.turn(6);}
-  if(rotateLeft){ship.turn(-6);}
-   
-//stars
-  for(int i=0;i<stars.length;i++) 
-  { 
-    stars[i].show();
-  }
-  //bullets
+    //bullets
   if (bullet1){
   Bullets.add(new Bullet(ship));
   }
@@ -77,7 +39,61 @@ break;
  }
 }
 }
-}
+
+  //bullets
+//  if (bullet1)Bullets.add(new Bullet(ship));
+//for(int p=0;p<Bullets.size();p++){
+//   Bullets.get(p).move();
+//   Bullets.get(p).show();
+//   Bullets.get(p).myCenterX += Bullets.get(p).myDirectionX;    
+//   Bullets.get(p).myCenterY += Bullets.get(p).myDirectionY;  
+//   if(Bullets.get(p).myCenterX==Bullets.get(p).myDirectionX&&Bullets.get(p).myCenterY==Bullets.get(p).myDirectionY){
+//   Bullets.remove(p);
+//}
+//for(int o=0;o<ast.size();o++){  
+//  if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullets.get(p).getX(),Bullets.get(p).getY())<20){
+//  Bullets.remove(p);
+//  ast.remove(o);
+//break;
+//  }
+//}
+//}
+if(ship.getDirectionX()>8){ship.setDirectionX(8);}
+  if(ship.getDirectionY()>8){ship.setDirectionY(8);}
+  if(ship.getDirectionX()<-8){ship.setDirectionX(-8);}
+  if(ship.getDirectionY()<-8){ship.setDirectionY(-8);}
+//acclerate
+
+  if(restart){
+  }
+//hyperspace
+  if(hyperspace){
+    }
+   
+//rotation
+  if(rotateRight){ship.turn(6);}
+  if(rotateLeft){ship.turn(-6);}
+   //detection
+   for(int r=0;r<ast.size();r++) {
+    float ship1 = dist(ship.getX(),ship.getY(),ast.get(r).getX(),ast.get(r).getY());
+    if(ship1< 20){
+      ast.remove(r);
+  }
+  else
+  { 
+    ast.get(r).move();
+    ast.get(r).show();
+  }
+   }
+//stars
+  for(int i=0;i<stars.length;i++) 
+  { 
+    stars[i].show();
+  }
+ship.show();
+oo = (0.05);
+  if(move){ ship.move();ship.accelerate(oo+ss);}
+  if(move==false){ ship.move();}
 //ship control
   //if(right){
   // ship.myCenterX += 6;
