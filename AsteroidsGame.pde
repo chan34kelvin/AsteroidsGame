@@ -19,6 +19,56 @@ public void setup(){
 public void draw()
 {
   background(0);
+  //bullets
+  if (bullet1)Bullets.add(new Bullet(ship));
+for(int p=0;p<Bullets.size();p++){
+   Bullets.get(p).move();
+   Bullets.get(p).show();
+   Bullets.get(p).myCenterX += Bullets.get(p).myDirectionX;    
+   Bullets.get(p).myCenterY += Bullets.get(p).myDirectionY;  
+   if(Bullets.get(p).myCenterX==Bullets.get(p).myDirectionX&&Bullets.get(p).myCenterY==Bullets.get(p).myDirectionY){
+   Bullets.remove(p);
+}
+for(int o=0;o<ast.size();o++){  
+  if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullets.get(p).getX(),Bullets.get(p).getY())<20){
+  Bullets.remove(p);
+  ast.remove(o);
+break;
+  }
+}
+}
+//acclerate
+oo = (0.05);
+  if(move){ ship.move();ship.accelerate(oo+ss);}
+  if(move==false){ ship.move();}
+
+  if(ship.getDirectionX()>8){ship.setDirectionX(8);}
+  if(ship.getDirectionY()>8){ship.setDirectionY(8);}
+  if(ship.getDirectionX()<-8){ship.setDirectionX(-8);}
+  if(ship.getDirectionY()<-8){ship.setDirectionY(-8);}
+  //detection
+   for(int r=0;r<ast.size();r++){ 
+    float ship1 = dist(ship.getX(),ship.getY(),ast.get(r).getX(),ast.get(r).getY());
+    if(ship1< 20){
+      ast.remove(r);
+  }
+  else
+  { 
+    ast.get(r).move();
+    ast.get(r).show();
+  }
+  if(restart){
+  }
+//hyperspace
+  if(hyperspace){
+    //fill(0);
+    //noStroke();
+    //rect(0,0,1000,1000);
+    //for(int i=0;i<200;i++){
+    //  fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+    //  ellipse(250,250,(float)(Math.random()*700),(float)(Math.random()*700));
+    }
+  }
 //rotation
   if(rotateRight){ship.turn(6);}
   if(rotateLeft){ship.turn(-6);}
@@ -54,58 +104,8 @@ public void draw()
     ship.myCenterY=9;
   }
   
-  //acclerate
-  oo = (0.05);
-  if(move){ ship.move();ship.accelerate(oo+ss);}
-  if(move==false){ ship.move();}
+   }
 
-  if(ship.getDirectionX()>8){ship.setDirectionX(8);}
-  if(ship.getDirectionY()>8){ship.setDirectionY(8);}
-  if(ship.getDirectionX()<-8){ship.setDirectionX(-8);}
-  if(ship.getDirectionY()<-8){ship.setDirectionY(-8);}
-
-//detection
-   for(int r=0;r<ast.size();r++){ 
-    float ship1 = dist(ship.getX(),ship.getY(),ast.get(r).getX(),ast.get(r).getY());
-    if(ship1< 20){
-      ast.remove(r);
-  }
-  else
-  { 
-    ast.get(r).move();
-    ast.get(r).show();
-  }
-  if(restart){
-  }
-//hyperspace
-  if(hyperspace){
-    //fill(0);
-    //noStroke();
-    //rect(0,0,1000,1000);
-    //for(int i=0;i<200;i++){
-    //  fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
-    //  ellipse(250,250,(float)(Math.random()*700),(float)(Math.random()*700));
-    }
-  }
-   //bullets
-  if (bullet1)Bullets.add(new Bullet(ship));
-for(int p=0;p<Bullets.size();p++){
-   Bullets.get(p).move();
-   Bullets.get(p).show();
-   Bullets.get(p).myCenterX += Bullets.get(p).myDirectionX;    
-   Bullets.get(p).myCenterY += Bullets.get(p).myDirectionY;  
-   if(Bullets.get(p).myCenterX==Bullets.get(p).myDirectionX&&Bullets.get(p).myCenterY==Bullets.get(p).myDirectionY){
-   Bullets.remove(p);
-}
-for(int o=0;o<ast.size();o++){  
-  if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullets.get(p).getX(),Bullets.get(p).getY())<20){
-  Bullets.remove(p);
-  ast.remove(o);
-break;
-  }
-}
-}
-  }
 //}
 public void keyPressed()
 {
