@@ -26,7 +26,7 @@ for(int p=0;p<Bullets.size();p++){
    Bullets.get(p).show();
    Bullets.get(p).myCenterX += Bullets.get(p).myDirectionX;    
    Bullets.get(p).myCenterY += Bullets.get(p).myDirectionY;  
-   if( Bullets.get(p).myCenterX==Bullets.get(p).myDirectionX&&Bullets.get(p).myCenterY==Bullets.get(p).myDirectionY){
+   if(Bullets.get(p).myCenterX==Bullets.get(p).myDirectionX&&Bullets.get(p).myCenterY==Bullets.get(p).myDirectionY){
    Bullets.remove(p);
 }
 for(int o=0;o<ast.size();o++){  
