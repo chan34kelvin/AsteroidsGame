@@ -2,7 +2,7 @@ Spaceship ship= new Spaceship();
 Stars[] stars = new Stars[100];
 //Asteroid [] ast= new Asteroid [20];
 ArrayList <Asteroid> ast = new ArrayList<Asteroid>();
-ArrayList <Bullet> Bullets = new ArrayList<Bullet>();
+ArrayList <Bullet> Bullet2 = new ArrayList<Bullet>();
 boolean move, rotateRight, rotateLeft, hyperspace, bullet1, restart;
 float oo,ss;
 boolean up = false;
@@ -21,19 +21,19 @@ public void draw()
   background(0);
     //bullets
 //  if (bullet1){
-//  Bullets.add(new Bullet(ship));
+//  Bullet2.add(new Bullet(ship));
 //  }
-//  for(int p=0;p<Bullets.size();p++){
-//   Bullets.get(p).move();
-//   Bullets.get(p).show();
-//   Bullets.get(p).myCenterX += Bullets.get(p).myDirectionX;    
-//   Bullets.get(p).myCenterY += Bullets.get(p).myDirectionY;  
-//   if(Bullets.get(p).myCenterX==Bullets.get(p).myDirectionX&&Bullets.get(p).myCenterY==Bullets.get(p).myDirectionY){
-//   Bullets.remove(p);
+//  for(int p=0;p<Bullet2.size();p++){
+//   Bullet2.get(p).move();
+//   Bullet2.get(p).show();
+//   Bullet2.get(p).myCenterX += Bullet2.get(p).myDirectionX;    
+//   Bullet2.get(p).myCenterY += Bullet2.get(p).myDirectionY;  
+//   if(Bullet2.get(p).myCenterX==Bullet2.get(p).myDirectionX&&Bullet2.get(p).myCenterY==Bullet2.get(p).myDirectionY){
+//   Bullet2.remove(p);
 // }
 //for(int o=0;o<ast.size();o++){  
-//  if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullets.get(p).getX(),Bullets.get(p).getY())<20){
-//  Bullets.remove(p);
+//  if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullet2.get(p).getX(),Bullet2.get(p).getY())<20){
+//  Bullet2.remove(p);
 //  ast.remove(o);
 //break;
 // }
@@ -122,26 +122,26 @@ oo = (0.05);
    
    
 //bullets
-  if (bullet1)
-  Bullets.add(new Bullet(ship));
-
-  for(int p=0;p<Bullets.size();p++){
-   Bullets.get(p).move();
-   Bullets.get(p).show();
-   Bullets.get(p).myCenterX += Bullets.get(p).myDirectionX;    
-   Bullets.get(p).myCenterY += Bullets.get(p).myDirectionY;  
-   if(Bullets.get(p).myCenterX==Bullets.get(p).myDirectionX&&Bullets.get(p).myCenterY==Bullets.get(p).myDirectionY){
-   Bullets.remove(p);
+    if (bullet1){
+  Bullet2.add(new Bullet(ship));
+  }
+  for(int p=0;p<Bullet2.size();p++){
+   Bullet2.get(p).move();
+   Bullet2.get(p).show();
+   Bullet2.get(p).myCenterX += Bullet2.get(p).myDirectionX;    
+   Bullet2.get(p).myCenterY += Bullet2.get(p).myDirectionY;  
+   if(Bullet2.get(p).myCenterX==Bullet2.get(p).myDirectionX&&Bullet2.get(p).myCenterY==Bullet2.get(p).myDirectionY){
+   Bullet2.remove(p);
  }
 for(int o=0;o<ast.size();o++){  
-  if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullets.get(p).getX(),Bullets.get(p).getY())<20){
-  Bullets.remove(p);
+  if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullet2.get(p).getX(),Bullet2.get(p).getY())<20){
+  Bullet2.remove(p);
   ast.remove(o);
 break;
  }
 }
-  }
 }
+
 
 //}
 public void keyPressed()
