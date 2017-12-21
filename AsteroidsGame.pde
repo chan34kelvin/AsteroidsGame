@@ -77,6 +77,7 @@ break;
  }
 }
 }
+}
 //ship control
   //if(right){
   // ship.myCenterX += 6;
