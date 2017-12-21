@@ -37,7 +37,7 @@ break;
   }
 }
 }
-
+ship.show();
 //acclerate
 oo = (0.05);
   if(move){ ship.move();ship.accelerate(oo+ss);}
@@ -76,7 +76,6 @@ oo = (0.05);
     stars[i].show();
   }
 //ship control
-  ship.show();
   //if(right){
   // ship.myCenterX += 6;
   //}
