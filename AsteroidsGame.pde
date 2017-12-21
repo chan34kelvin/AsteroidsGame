@@ -37,6 +37,7 @@ break;
   }
 }
 }
+
 //acclerate
 oo = (0.05);
   if(move){ ship.move();ship.accelerate(oo+ss);}
@@ -46,6 +47,7 @@ oo = (0.05);
   if(ship.getDirectionY()>8){ship.setDirectionY(8);}
   if(ship.getDirectionX()<-8){ship.setDirectionX(-8);}
   if(ship.getDirectionY()<-8){ship.setDirectionY(-8);}
+
   //detection
    for(int r=0;r<ast.size();r++){ 
     float ship1 = dist(ship.getX(),ship.getY(),ast.get(r).getX(),ast.get(r).getY());
@@ -57,12 +59,13 @@ oo = (0.05);
     ast.get(r).move();
     ast.get(r).show();
   }
+   }
   if(restart){
   }
 //hyperspace
   if(hyperspace){
     }
-}
+   
 //rotation
   if(rotateRight){ship.turn(6);}
   if(rotateLeft){ship.turn(-6);}
@@ -97,7 +100,7 @@ oo = (0.05);
   if(ship.myCenterY>=490){
     ship.myCenterY=9;
   }
-  
+
    }
 
 //}
