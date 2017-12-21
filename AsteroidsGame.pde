@@ -28,14 +28,16 @@ public void draw()
    Bullets.get(p).myCenterY += Bullets.get(p).myDirectionY;  
    if(Bullets.get(p).myCenterX==Bullets.get(p).myDirectionX&&Bullets.get(p).myCenterY==Bullets.get(p).myDirectionY){
    Bullets.remove(p);
-}
-}
+
 for(int o=0;o<ast.size();o++){  
   if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullets.get(p).getX(),Bullets.get(p).getY())<20){
   Bullets.remove(p);
   ast.remove(o);
 break;
  }
+}
+}
+}
 }
 ship.show();
 //acclerate
