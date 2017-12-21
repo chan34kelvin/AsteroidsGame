@@ -19,25 +19,24 @@ public void setup(){
 public void draw()
 {
   background(0);
-//    //bullets
-//  if (bullet1)
-//  bullet2.add(new Bullet(ship));
-//  for(int p=0;p<bullet2.size();p++){
-//   bullet2.get(p).move();
-//   bullet2.get(p).show();
-//   bullet2.get(p).myCenterX += bullet2.get(p).myDirectionX;    
-//   bullet2.get(p).myCenterY += bullet2.get(p).myDirectionY;  
-//   if(bullet2.get(p).myCenterX==bullet2.get(p).myDirectionX&&bullet2.get(p).myCenterY==bullet2.get(p).myDirectionY){
-//   bullet2.remove(p);
-// }
-//for(int o=0;o<ast.size();o++){  
-//  if (dist(ast.get(o).getX(), ast.get(o).getY(), bullet2.get(p).getX(),bullet2.get(p).getY())<20){
-//  bullet2.remove(p);
-//  ast.remove(o);
-//break;
-// }
-//}
-//}
+    //bullets
+  if (bullet1)bullet2.add(new Bullet(ship));
+  for(int p=0;p<bullet2.size();p++){
+   bullet2.get(p).move();
+   bullet2.get(p).show();
+   bullet2.get(p).myCenterX += bullet2.get(p).myDirectionX;    
+   bullet2.get(p).myCenterY += bullet2.get(p).myDirectionY;  
+   if(bullet2.get(p).myCenterX==bullet2.get(p).myDirectionX&&bullet2.get(p).myCenterY==bullet2.get(p).myDirectionY){
+   bullet2.remove(p);
+ }
+for(int o=0;o<ast.size();o++){  
+  if (dist(ast.get(o).getX(), ast.get(o).getY(), bullet2.get(p).getX(),bullet2.get(p).getY())<20){
+  bullet2.remove(p);
+  ast.remove(o);
+break;
+ }
+}
+}
 oo = (0.05);
 if(ship.getDirectionX()>6){ship.setDirectionX(6);}
   if(ship.getDirectionY()>6){ship.setDirectionY(6);}
@@ -108,7 +107,7 @@ ship.show();
 //}
 public void keyPressed()
 {
-   if (key=='p'){bullet1=true;}  
+   if (key=='o'){bullet1=true;}  
    //if (key=='w') {up = true; }
    //if (key=='d'){right = true;}
    //if (key=='a'){left = true;}
@@ -147,7 +146,7 @@ public void keyPressed()
    }
 
 public void keyReleased(){
-   if (key=='p'){bullet1=false;}
+   if (key=='o'){bullet1=false;}
    //if (key=='d'){right=false;}
    //if (key=='a'){left=false;}
    //if (key=='w'){up=false;}
