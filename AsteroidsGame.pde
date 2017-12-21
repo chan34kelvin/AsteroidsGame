@@ -58,7 +58,9 @@ oo = (0.05);
     stars[i].show();
   }
   //bullets
-  if (bullet1)Bullets.add(new Bullet(ship));
+  if (bullet1){
+  Bullets.add(new Bullet(ship));
+  }
   for(int p=0;p<Bullets.size();p++){
    Bullets.get(p).move();
    Bullets.get(p).show();
