@@ -58,6 +58,25 @@ public void draw()
 //  }
 //}
 //}
+  if (bullet1){
+  bullet2.add(new Bullet(ship));
+  }
+  for(int p=0;p<bullet2.size();p++){
+   bullet2.get(p).move();
+   bullet2.get(p).show();
+   bullet2.get(p).myCenterX += bullet2.get(p).myDirectionX;    
+   bullet2.get(p).myCenterY += bullet2.get(p).myDirectionY;  
+   if(bullet2.get(p).myCenterX==bullet2.get(p).myDirectionX&&bullet2.get(p).myCenterY==bullet2.get(p).myDirectionY){
+   bullet2.remove(p);
+ }
+for(int o=0;o<ast.size();o++){  
+  if (dist(ast.get(o).getX(), ast.get(o).getY(), bullet2.get(p).getX(),bullet2.get(p).getY())<20){
+  bullet2.remove(p);
+  ast.remove(o);
+break;
+ }
+}
+}
 if(ship.getDirectionX()>8){ship.setDirectionX(8);}
   if(ship.getDirectionY()>8){ship.setDirectionY(8);}
   if(ship.getDirectionX()<-8){ship.setDirectionX(-8);}
@@ -122,25 +141,7 @@ oo = (0.05);
    
    
 //bullets
-  if (bullet1){
-  bullet2.add(new Bullet(ship));
-  }
-  for(int p=0;p<bullet2.size();p++){
-   bullet2.get(p).move();
-   bullet2.get(p).show();
-   bullet2.get(p).myCenterX += bullet2.get(p).myDirectionX;    
-   bullet2.get(p).myCenterY += bullet2.get(p).myDirectionY;  
-   if(bullet2.get(p).myCenterX==bullet2.get(p).myDirectionX&&bullet2.get(p).myCenterY==bullet2.get(p).myDirectionY){
-   bullet2.remove(p);
- }
-for(int o=0;o<ast.size();o++){  
-  if (dist(ast.get(o).getX(), ast.get(o).getY(), bullet2.get(p).getX(),bullet2.get(p).getY())<20){
-  bullet2.remove(p);
-  ast.remove(o);
-break;
- }
-}
-}
+
 }
 
 //}
