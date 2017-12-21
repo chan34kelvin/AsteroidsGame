@@ -20,25 +20,25 @@ public void draw()
 {
   background(0);
     //bullets
-if (bullet1){
-  bullet2.add(new Bullet(ship));
-  }
-  for(int p=0;p<bullet2.size();p++){
-   bullet2.get(p).move();
-   bullet2.get(p).show();
-   bullet2.get(p).myCenterX += bullet2.get(p).myDirectionX;    
-   bullet2.get(p).myCenterY += bullet2.get(p).myDirectionY;  
-   if(bullet2.get(p).myCenterX==bullet2.get(p).myDirectionX&&bullet2.get(p).myCenterY==bullet2.get(p).myDirectionY){
-   bullet2.remove(p);
- }
-for(int o=0;o<ast.size();o++){  
-  if (dist(ast.get(o).getX(), ast.get(o).getY(), bullet2.get(p).getX(),bullet2.get(p).getY())<20){
-  bullet2.remove(p);
-  ast.remove(o);
-break;
- }
-}
-}
+//  if (bullet1){
+//  Bullets.add(new Bullet(ship));
+//  }
+//  for(int p=0;p<Bullets.size();p++){
+//   Bullets.get(p).move();
+//   Bullets.get(p).show();
+//   Bullets.get(p).myCenterX += Bullets.get(p).myDirectionX;    
+//   Bullets.get(p).myCenterY += Bullets.get(p).myDirectionY;  
+//   if(Bullets.get(p).myCenterX==Bullets.get(p).myDirectionX&&Bullets.get(p).myCenterY==Bullets.get(p).myDirectionY){
+//   Bullets.remove(p);
+// }
+//for(int o=0;o<ast.size();o++){  
+//  if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullets.get(p).getX(),Bullets.get(p).getY())<20){
+//  Bullets.remove(p);
+//  ast.remove(o);
+//break;
+// }
+//}
+//}
 
   //bullets
 //  if (bullet1)Bullets.add(new Bullet(ship));
@@ -122,8 +122,26 @@ oo = (0.05);
    
    
 //bullets
-    
-
+  if (bullet1){
+  bullet2.add(new Bullet(ship));
+  }
+  for(int p=0;p<bullet2.size();p++){
+   bullet2.get(p).move();
+   bullet2.get(p).show();
+   bullet2.get(p).myCenterX += bullet2.get(p).myDirectionX;    
+   bullet2.get(p).myCenterY += bullet2.get(p).myDirectionY;  
+   if(bullet2.get(p).myCenterX==bullet2.get(p).myDirectionX&&bullet2.get(p).myCenterY==bullet2.get(p).myDirectionY){
+   bullet2.remove(p);
+ }
+for(int o=0;o<ast.size();o++){  
+  if (dist(ast.get(o).getX(), ast.get(o).getY(), bullet2.get(p).getX(),bullet2.get(p).getY())<20){
+  bullet2.remove(p);
+  ast.remove(o);
+break;
+ }
+}
+}
+}
 
 //}
 public void keyPressed()
