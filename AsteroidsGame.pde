@@ -19,7 +19,6 @@ public void setup(){
 public void draw()
 {
   background(0);
-
 ship.show();
 //acclerate
 oo = (0.05);
@@ -58,6 +57,24 @@ oo = (0.05);
   { 
     stars[i].show();
   }
+  //bullets
+  if (bullet1)Bullets.add(new Bullet(ship));
+  for(int p=0;p<Bullets.size();p++){
+   Bullets.get(p).move();
+   Bullets.get(p).show();
+   Bullets.get(p).myCenterX += Bullets.get(p).myDirectionX;    
+   Bullets.get(p).myCenterY += Bullets.get(p).myDirectionY;  
+   if(Bullets.get(p).myCenterX==Bullets.get(p).myDirectionX&&Bullets.get(p).myCenterY==Bullets.get(p).myDirectionY){
+   Bullets.remove(p);
+ }
+for(int o=0;o<ast.size();o++){  
+  if (dist(ast.get(o).getX(), ast.get(o).getY(), Bullets.get(p).getX(),Bullets.get(p).getY())<20){
+  Bullets.remove(p);
+  ast.remove(o);
+break;
+ }
+}
+}
 //ship control
   //if(right){
   // ship.myCenterX += 6;
