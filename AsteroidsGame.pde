@@ -108,7 +108,7 @@ ship.show();
 //}
 public void keyPressed()
 {
-   if (key=='o'){bullet1=true;}  
+   if (key=='p'){bullet1=true;}  
    //if (key=='w') {up = true; }
    //if (key=='d'){right = true;}
    //if (key=='a'){left = true;}
@@ -147,7 +147,7 @@ public void keyPressed()
    }
 
 public void keyReleased(){
-   if (key=='o'){bullet1=false;}
+   if (key=='p'){bullet1=false;}
    //if (key=='d'){right=false;}
    //if (key=='a'){left=false;}
    //if (key=='w'){up=false;}
